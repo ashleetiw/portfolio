@@ -17,14 +17,14 @@
     <meta content="The goal of the project is to detect the lanes for a small LIDAR point cloud. Therefore, we cannot use a Deep Learning algorithm that learns to identify the lanes by looking at a vast amount of data. This project shows how to detect lanes using lidar point clouds" property="og:description">
   
   
-    <meta content="/ashleetiw/how-to-start-programming/" property="og:url">
+    <meta content="http://localhost:4000/how-to-start-programming/" property="og:url">
   
   
     <meta content="2017-09-12T00:00:00-05:00" property="article:published_time">
-    <meta content="/ashleetiw/about/" property="article:author">
+    <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="/ashleetiw/portfolio/assets/img/original_pcl.png" property="og:image">
+    <meta content="http://localhost:4000/portfolio/assets/img/original_pcl.png" property="og:image">
   
   
     
@@ -44,13 +44,13 @@
     <meta name="twitter:title" content="Lane Detection on Small 3D Point Cloud Data">
   
   
-    <meta name="twitter:url" content="/ashleetiw/how-to-start-programming/">
+    <meta name="twitter:url" content="http://localhost:4000/how-to-start-programming/">
   
   
     <meta name="twitter:description" content="The goal of the project is to detect the lanes for a small LIDAR point cloud. Therefore, we cannot use a Deep Learning algorithm that learns to identify the lanes by looking at a vast amount of data. This project shows how to detect lanes using lidar point clouds">
   
   
-    <meta name="twitter:image:src" content="/ashleetiw/portfolio/assets/img/original_pcl.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/portfolio/assets/img/original_pcl.png">
   
 
 	<meta name="description" content="The goal of the project is to detect the lanes for a small LIDAR point cloud. Therefore, we cannot use a Deep Learning algorithm that learns to identify the lanes by looking at a vast amount of data. This project shows how to detect lanes using lidar point clouds">
@@ -141,7 +141,7 @@ The goal of the project is lane detection for a small 3D LIDAR point cloud. Lane
 <h2 id="problem-statement">Problem Statement:</h2>
 <p>The lane detection problem consists of using detected features to infer the presence of lanes and to generate an initial estimate of lane geometry. Lane estimation can be modeled as a curve estimation problem, where sensor data provides partial and noisy observations of curves. The number of curves to estimate may be initially unknown and many of the observations may be outliers and false detections. The challenge is to detect lanes when and where they exist on top of the image.</p>
 
-<h2 id="approach">Approach</h2>
+<h2 id="my-approach">My Approach</h2>
 
 <blockquote>
   <p>Lane line has a higher reflection of laser, thus its intensity of point cloud is stronger as compared to the plain asphalt or concrete of the street</p>
@@ -152,8 +152,6 @@ The goal of the project is lane detection for a small 3D LIDAR point cloud. Lane
 <p>In this project, I attempted to demonstrate how to process 3-D lidar data from a LIDAR sensor mounted on a vehicle by segmenting the ground plane and detect lanes from point cloud data. I also developed visualization techniques to convert 3d point clouds to the panoramic view or bird’s eye view and overlay the 3D lidar points on top of the 2D image.</p>
 
 <p><img src="../assets/img/im.png" alt="Diagram" /></p>
-
-<p>Ref:https://www.mathworks.com/help/lidar/ug/lane-detection-in-3d-lidar-point-cloud.html</p>
 
 <h2 id="result">Result</h2>
 <p>The algorithm is a robust lane detection method that was able to perform well on urban and highway lanes. This method performs well on curavature lanes as well.Testing was performed on the KITTI vision Road/Lane dataset (http://www.cvlibs.net/datasets/kitti/eval_road.php)</p>
@@ -178,9 +176,9 @@ https://github.com/ashleetiw/Lane-detection-pointclouds</p>
 
       <div class="page-footer">
         <div class="page-share">
-          <!-- <a href="https://twitter.com/intent/tweet?text=Lane Detection on Small 3D Point Cloud Data&url=/ashleetiw/how-to-start-programming/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u=/ashleetiw/how-to-start-programming/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
-          <a href="https://plus.google.com/share?url=/ashleetiw/how-to-start-programming/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a> -->
+          <!-- <a href="https://twitter.com/intent/tweet?text=Lane Detection on Small 3D Point Cloud Data&url=http://localhost:4000/how-to-start-programming/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/how-to-start-programming/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/how-to-start-programming/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a> -->
         </div>
         <div class="page-tag">
           
