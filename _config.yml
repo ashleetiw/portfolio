@@ -1,25 +1,25 @@
-title: Hello, world! I'm David Freeman
+title: Hi ! I'm Ashlee Tiwari
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 permalink: ':title/'
 baseurl: "/flexible-jekyll" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "/ashleetiw" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
-author: David Freeman # add your name
-author-img: david-freeman.jpg # add your photo
-about-author: I am a web developer focusing on front-end development. Always hungry to keep learning. # add description
+author: Ashlee Tiwari # add your name
+author-img: me.png # add your photo
+about-author: I am eager to learn new domains and enjoy building solutions to challenging problems.Education:Northwestern University | IIT Kanpur  # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
-social-github: artemsheludko # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: # add your Email address
+social-github: ashleetiw # add your Github handle
+social-linkedin: ashlee-tiwari-8259a7131 # add your Linkedin handle
+social-email: ashleetiwari2021@u.northwestern.edu # add your Email address
 
 # Disqus
-discus-identifier: mr-brown # add your discus identifier
+# discus-identifier: m # add your discus identifier
 
 # Tracker
 analytics: # Google Analytics
