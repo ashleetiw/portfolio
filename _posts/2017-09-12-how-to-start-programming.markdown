@@ -22,7 +22,7 @@ Nearly half of all highway fatalities occur from unintended lane departures, whi
 The lane detection problem consists of using detected features to infer the presence of lanes and to generate an initial estimate of lane geometry. Lane estimation can be modeled as a curve estimation problem, where sensor data provides partial and noisy observations of curves. The number of curves to estimate may be initially unknown and many of the observations may be outliers and false detections. The challenge is to detect lanes when and where they exist on top of the image.
 
 
-##  My Approach
+##  Approach
 
 > Lane line has a higher reflection of laser, thus its intensity of point cloud is stronger as compared to the plain asphalt or concrete of the street
 
@@ -31,6 +31,9 @@ The approach used was detecting lanes using windows sliding search from a multi-
 In this project, I attempted to demonstrate how to process 3-D lidar data from a LIDAR sensor mounted on a vehicle by segmenting the ground plane and detect lanes from point cloud data. I also developed visualization techniques to convert 3d point clouds to the panoramic view or bird's eye view and overlay the 3D lidar points on top of the 2D image.
 
 ![Diagram](../assets/img/im.png)
+
+
+Ref:https://www.mathworks.com/help/lidar/ug/lane-detection-in-3d-lidar-point-cloud.html
 
 
 ## Result
