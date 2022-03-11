@@ -33,9 +33,6 @@ In this project, I attempted to demonstrate how to process 3-D lidar data from a
 ![Diagram](../assets/img/im.png)
 
 
-
-
-
 ## Result
 The algorithm is a robust lane detection method that was able to perform well on urban and highway lanes. This method performs well on curavature lanes as well.Testing was performed on the KITTI vision Road/Lane dataset (http://www.cvlibs.net/datasets/kitti/eval_road.php)
 
