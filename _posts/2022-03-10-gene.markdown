@@ -17,13 +17,13 @@ GA algorithms have better intelligence than random search algorithms because the
 
 
 ## Problem Statement:
-The function search problem tries to evolve a function which optimizes overa certain condition defined by " fitness function"   using genetic algorithm.
+The function search problem tries to evolve a function that optimizes over a certain condition defined by " fitness function"   using a genetic algorithm.
 
 > Pool of function candidates
 >[log(x), x , -x , log(-x), e^x, e^-x, 1/x ,-1/x, sin(x), cos(x)]
 
-Initially, the algorithm starts with number of random functions, generated using different combinations from the Hypothesis pool.
-GA maintains a population of chromosomes. Every chromosome plays the role of providing a possible solution for the problem. The idea is that "evolution" will find an optimal solution for the problem after a number of successive generations smilar to natural selection. 
+Initially, the algorithm starts with several random functions, generated using different combinations from the Hypothesis pool.
+GA maintains a population of chromosomes. Every chromosome plays the role of providing a possible solution for the problem. The idea is that "evolution" will find an optimal solution for the problem after a number of successive generations similar to natural selection. 
 
 
 ## Algorithm  
@@ -32,37 +32,37 @@ Given a list of genes and a fitness function, the algorithm starts from a random
 ![algo](../assets/img/genetic.gif){: width="300" }
 
 ## Reproduction 
-It is a process of finding successors to the current chromosomes.Every reproduction step will produce the chromosomes that are more fit for the problem. 
-Over multiple iteration the chunk of the range that a chromosome takes is proportional to its fitness. This results in a fitter chromosome getting a bigger chunk
+It is a process of finding successors to the current chromosomes. Every reproduction step will produce the chromosomes that are more fit for the problem. 
+Over multiple iterations, the chunk of the range that a chromosome takes is proportional to its fitness. This results in a fitter chromosome getting a bigger chunk
 
 ![repo](../assets/img/reproduction.png){: width="500" }
 
 
 ## Crossover
-With the predefined probability crossoverProbability, we select parents for breeding. The selected parents are shuffled, allowing any combinations to happen. We take pairs of parents and apply the crossover operator.The children replace their parents in the population.
+With the predefined probability "crossoverProbability", we select parents for breeding. The selected parents are shuffled, allowing any combinations to happen. We take pairs of parents and apply the crossover operator. The children replace their parents in the population.
 
 ![c](../assets/img/crossover.gif){: width="300" }
 
 
 ## Mutation 
-With predefined probability mutationProbability, we perform recombination on the chromosomes.
+With predefined probability "mutationProbability", we perform recombination on the chromosomes.
 ![m](../assets/img/mutation.gif){: width="300" }
 
 
 
 ## Function search Approach
-I used binary genetic algorithm to solve the problem which accepts a binary string(Eg:'111000011010').To use the algorithm for finding the correct function that optimizes my pattern, I mapped the chromosome length to the number of candidates in the hypothesis.Each combination of binary string will produce a unqiue function.
+I used a binary genetic algorithm to solve the problem which accepts a binary string(Eg:'111000011010').To use the algorithm for finding the correct function that optimizes my pattern, I mapped the chromosome length to the number of candidates in the hypothesis. Each combination of the binary string will produce a unique function.
 
 ![g](../assets/img/decode.png){: width="500" }
 
 
 
 ## Fitness function 
-I experimented on Different fitness functions.Below is the visualization of the functions I experimented with 
+I experimented usin different fitness functions. Below is the visualization of the functions I experimented with 
 
 ![onjective](../assets/img/objective.png){: width="800" }
 
-The chromosomes that are more fit have a better chance for survival. Fitness is a function that measures the quality of the solution represented by the chromosome.Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.
+Criteria: The chromosomes that are more fit have a better chance of survival. Fitness is a function that measures the quality of the solution represented by the chromosome. Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.
 
 ![fitness](../assets/img/fitness.png){: width="600" }
 
@@ -71,14 +71,15 @@ The chromosomes that are more fit have a better chance for survival. Fitness is 
 
 ## Training
 
-It runs for any number of eras. In each era,we:
+It runs for any number of eras. In each era, we:
 
 1. perform reproduction to create a new population from the old population
 2. perform crossover on the population
 3. perform mutation on the population
 
-![opt](../assets/img/optp.gif){: width="600" }
+![opt](../assets/img/optp.gif)
 
+![gaval](../assets/img/gaeval.png)
 
 
 

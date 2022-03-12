@@ -1,0 +1,88 @@
+I"�<p>The goal of the project is to enable faster and more precise eye gaze direction estimation in VR/AR/MR devices by exploiting the deflectometry information provided from the reflection of the screen pattern on the specular surface of the eye.</p>
+
+<p>This is my final graduate project at Northwestern University. I was supervised by</p>
+<ol>
+  <li>Professor Florian Willomitzer, and Oliver Cossairt, ECE/CS Department</li>
+  <li>Nathan Matsuda, Ph.D., Facebook Reality Labs</li>
+  <li>Professor Matthew Elwin, Deputy Director of the Master of Robotics Program</li>
+</ol>
+
+<h2 id="motivation">Motivation</h2>
+<p>The project aims to solve one of the current problems in Virtual, Augmented, or Mixed Reality
+Headsets: Accurate and fast eye tracking. Precise eye tracking in VR/AR/MR Headsets can help to significantly increase the viewing comfort by continuously keeping track of the inter-pupillary distance (IPD) of the viewer. This is important since changing the eye’s focus (accommodation) is in natural scenes directly connected to the vergence of the optical axes of both eyes(“accommodation-convergence reflex”).</p>
+
+<h2 id="problem-statement">Problem Statement:</h2>
+<p>High-quality gaze tracking requires sufficient 3D scene understanding since the vertex of the eye must be precisely tracked
+in three dimensions.This requires a precise and dense single-shot 3D measurement of the eye surface and a procedure to evaluate
+these measurement to calculate the gazing direction.</p>
+
+<h2 id="the-principle-of-the-normal-measurement-in-deflectometry">The principle of the normal measurement in deflectometry</h2>
+<p>The purpose of this project is to significantly increase the information content that is provided by corneal or scleral reflection to calculate the gazing direction.</p>
+
+<p><img src="../assets/img/deflectometry.jpg" alt="approach" width="600" /></p>
+
+<p>The basic principle of Deflectometry: A screen that displays a known pattern replaces the point-like light source.
+In Deflectometry systems, the screen and camera face the object, which means that the camera observes the specular reflection of the screen over
+the object’s surface. The observed pattern in the camera image is a deformed version of the image on the screen,
+where the deformation depends on the surface normal distribution of the object surface. From this deformation,
+the normal vectors of the surface can be calculated.</p>
+
+<h2 id="model-design-swirski-eye">Model Design: Swirski Eye</h2>
+<p>It is very crucial to have a model that captures realistic face geometry, including eyelids and eyebrows, that animates in response to the eye movements and different closeness settings. To create a realistic render of the eye, I used the model Swirski and Dodgson developed in their paper. Since
+the original Swirski model did not use an eyeball with the elevated cornea, I swapped the eyeball in the Swirski model and replaced it with my own eye model while keeping the face model.
+To load and animate the model I used Blender, which is a free and open-source 3D computer graphics software.</p>
+
+<p><img src="../assets/img/eyemodel.gif" alt="eye" width="600" /></p>
+
+<!-- ## Single Frame Deflectometry Network(SFDN) vs Double Frame Deflectometry (DFDN)
+The project initially used SFDN which takes a single eye image as an input and predicts two rotation angles of the eye: azimuth and elevation
+Drawback: SFDN can only work well with a fixed pattern that it was trained with.
+
+To overcome this issue, I chose Double Frame Deflectometry Network(DFDN), to allow arbitrary screen patterns for the inputs
+
+
+DFDN takes a pair of eye images, where one is an actual captured image and the other
+is a synthesized eye image with preset rotation angles and the reflection of an arbitrary pattern(reference image)
+
+A reference image plays a role in providing the network
+with some information about the arbitrary pattern that is being reflected on the captured eye image. -->
+
+<h2 id="architecture-of-the-double-frame-deflectometry-network">Architecture of the Double Frame Deflectometry Network</h2>
+
+<p>Goal: To learn the relationship between the screen pattern of a captured image and that of a reference image to estimate the gaze direction based on the deformation of the pattern due to the rotation of the eye.</p>
+
+<p><img src="../assets/img/model.png" alt="model" width="600" /></p>
+
+<p>I chose Double Frame Deflectometry Network(DFDN), to allow arbitrary screen patterns for the inputs. DFDN takes a pair of eye images, where one is an actual captured imag and the other is a synthesized eye image with preset rotation angles and the reflection of an arbitrary pattern(reference image). A reference image plays a role in providing the network with some information about the arbitrary pattern that is being reflected on the captured eye image.</p>
+
+<h2 id="investigation-of-effects-of-various-patterns-on-gaze-estimation-accuracy">Investigation of effects of various patterns on gaze estimation accuracy</h2>
+
+<h3 id="random-pattern-with-various-low-pass-filters">Random pattern with various low pass filters</h3>
+<p><img src="../assets/img/gaussian.png" alt="g" width="600" /></p>
+
+<h3 id="sinusoids-of-different-periods">Sinusoids of different periods</h3>
+<p><img src="../assets/img/sine.png" alt="sine" width="600" /></p>
+
+<h3 id="effect-of-aliasing">Effect of Aliasing</h3>
+<p>These results are counter-intuitive and  we hypothesize that this nonlinearity between frequency and accuracy may be due to a severe undersampling happening at the boundary of the cornea and sclera because of the abrupt change in curvature.</p>
+
+<p><img src="../assets/img/alias_70.png" alt="alias" width="400" /></p>
+
+<h2 id="pattern-optimization">Pattern optimization</h2>
+<p>We concluded the following:</p>
+<ol>
+  <li>The true relationship between the frequency of the pattern and the estimation accuracy may be nonlinear. There may be a sweet spot, or the ideal frequency, where the network can minimize the estimation error. (This is due to the presence of a sharp edge between cornea and sclera)</li>
+  <li>The frequency might not be the exact property that is associated with accuracy.</li>
+</ol>
+
+<p>The test various hypothesis on the properties of patterns that may affect the accuracy, and in the process we aim to find the optimal
+the pattern that yields the lowest error.
+In this process I focused on using algorithms to find the optimal pattern in two steps:</p>
+<ol>
+  <li>To perform a course-level optimization to determine the shape of the function. This was achieved by using the genetic algorithm (which is mentioned in a different post) which eliminated some of the functions from the pool of hypothetical functions formed using a fitness function.</li>
+  <li>To perform a fine-level optimization to fine-tune the constants. This was achieved by gradient descent optimization on L2 loss which was calculated on gazing direction values( azimuthal and elevation angle).
+<img src="../assets/img/final.gif" alt="approach" width="600" />
+<img src="../assets/img/my-eye.png" alt="my-eye" width="190" /></li>
+</ol>
+
+:ET
