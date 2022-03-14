@@ -1,4 +1,4 @@
-I"¿<p>The goal of the project is to enable faster and more precise eye gaze direction estimation in VR/AR/MR devices by exploiting the deflectometry information provided from the reflection of the screen pattern on the specular surface of the eye.</p>
+I"8<p>The goal of the project is to enable faster and more precise eye gaze direction estimation in VR/AR/MR devices by exploiting the deflectometry information provided from the reflection of the screen pattern on the specular surface of the eye.</p>
 
 <p>This is my final graduate project at Northwestern University. I was supervised by</p>
 <ol>
@@ -84,5 +84,7 @@ In this process I focused on using algorithms to find the optimal pattern in two
 <img src="../assets/img/final.gif" alt="approach" width="600" />
 <img src="../assets/img/my-eye.png" alt="my-eye" width="190" /></li>
 </ol>
+
+<p><a href="https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning">NON-UNIFORM KERNEL CODE</a></p>
 
 :ET

@@ -100,7 +100,8 @@ In this process I focused on using algorithms to find the optimal pattern in two
 ![my-eye](../assets/img/my-eye.png){: width="190" }
 
 
- 
+[NON-UNIFORM KERNEL CODE](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning)
+
 
 
 

@@ -29,28 +29,29 @@ GA maintains a population of chromosomes. Every chromosome plays the role of pro
 ## Algorithm  
 Given a list of genes and a fitness function, the algorithm starts from a random population and evolves it, generation after generation, until it has converged to a good solution.
 
-![algo](../assets/img/genetic.gif){: width="300" }
+[![algo](../assets/img/genetic.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+
 
 ## Reproduction 
 It is a process of finding successors to the current chromosomes. Every reproduction step will produce the chromosomes that are more fit for the problem. 
 Over multiple iterations, the chunk of the range that a chromosome takes is proportional to its fitness. This results in a fitter chromosome getting a bigger chunk
 
-![repo](../assets/img/reproduction.png){: width="500" }
+[![repo](../assets/img/reproduction.png){: width="500" }](https://cppsecrets.com/article.php?id=8633)
 
 
 ## Crossover
 With the predefined probability "crossoverProbability", we select parents for breeding. The selected parents are shuffled, allowing any combinations to happen. We take pairs of parents and apply the crossover operator. The children replace their parents in the population.
 
-![c](../assets/img/crossover.gif){: width="300" }
+[![c](../assets/img/crossover.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
 
 
 ## Mutation 
 With predefined probability "mutationProbability", we perform recombination on the chromosomes.
-![m](../assets/img/mutation.gif){: width="300" }
+[![m](../assets/img/mutation.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
 
 
 
-## Function search Approach
+## Function search- Gene Encoding
 I used a binary genetic algorithm to solve the problem which accepts a binary string(Eg:'111000011010').To use the algorithm for finding the correct function that optimizes my pattern, I mapped the chromosome length to the number of candidates in the hypothesis. Each combination of the binary string will produce a unique function.
 
 ![g](../assets/img/decode.png){: width="500" }
@@ -60,7 +61,7 @@ I used a binary genetic algorithm to solve the problem which accepts a binary st
 ## Fitness function 
 I experimented usin different fitness functions. Below is the visualization of the functions I experimented with 
 
-![onjective](../assets/img/objective.png){: width="800" }
+[![onjective](../assets/img/objective.png){: width="800" }](https://github.com/epfl-disal/SwarmViz/tree/master/src)
 
 Criteria: The chromosomes that are more fit have a better chance of survival. Fitness is a function that measures the quality of the solution represented by the chromosome. Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.
 
@@ -89,11 +90,14 @@ It runs for any number of eras. In each era, we:
 3. The quality of the final solution is not guaranteed.
 4. Repetitive calculation of fitness values may make some problems to experience computational challenges.
 
-To refer to the code https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning
+
+[CODE](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning)
  
 
-Ref:http://matheubotha.github.io/DragonBrain/obj_functions/summary.html
-    https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969
+<!-- Ref: -->
+<!-- [1]: https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html "genetic algorithm" -->
+<!-- http://matheubotha.github.io/DragonBrain/obj_functions/summary.html
+    https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969 -->
 
 
 
