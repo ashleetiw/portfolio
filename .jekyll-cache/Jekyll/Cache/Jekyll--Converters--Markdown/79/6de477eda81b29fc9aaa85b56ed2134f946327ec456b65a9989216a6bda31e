@@ -1,5 +1,4 @@
-I"
-<p>This is an implementation of the Simple Genetic Algorithm, a metaheuristic search and optimization technique based on principles present in natural evolution.</p>
+I"�<p>This is an implementation of the Simple Genetic Algorithm, a metaheuristic search and optimization technique based on principles present in natural evolution.</p>
 
 <h2 id="motivation">Motivation</h2>
 <p>Many problems have optimal algorithms developed for them, while many others require us to randomly guess until we get a good answer. Even an optimal solution becomes slow and complex at a certain scale, at which point we can turn to natural processes to see how they reach acceptable results.
@@ -19,36 +18,50 @@ GA maintains a population of chromosomes. Every chromosome plays the role of pro
 <h2 id="algorithm">Algorithm</h2>
 <p>Given a list of genes and a fitness function, the algorithm starts from a random population and evolves it, generation after generation, until it has converged to a good solution.</p>
 
-<p><a href="https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm"><img src="../assets/img/genetic.gif" alt="algo" width="300" /></a></p>
+<p><img src="../assets/img/genetic.gif" alt="algo" width="300" /></p>
+
+<p><em>Fig1: Evolution flow of genetic algorithm[1]</em></p>
 
 <h2 id="reproduction">Reproduction</h2>
 <p>It is a process of finding successors to the current chromosomes. Every reproduction step will produce the chromosomes that are more fit for the problem. 
 Over multiple iterations, the chunk of the range that a chromosome takes is proportional to its fitness. This results in a fitter chromosome getting a bigger chunk</p>
 
-<p><a href="https://cppsecrets.com/article.php?id=8633"><img src="../assets/img/reproduction.png" alt="repo" width="500" /></a></p>
+<p><img src="../assets/img/reproduction.png" alt="repo" width="500" /></p>
+
+<p><em>Fig2: Example of Elitism[4]</em></p>
 
 <h2 id="crossover">Crossover</h2>
 <p>With the predefined probability “crossoverProbability”, we select parents for breeding. The selected parents are shuffled, allowing any combinations to happen. We take pairs of parents and apply the crossover operator. The children replace their parents in the population.</p>
 
-<p><a href="https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm"><img src="../assets/img/crossover.gif" alt="c" width="300" /></a></p>
+<p><img src="../assets/img/crossover.gif" alt="c" width="300" /></p>
+
+<p><em>Fig3: Crossover[1]</em></p>
 
 <h2 id="mutation">Mutation</h2>
 <p>With predefined probability “mutationProbability”, we perform recombination on the chromosomes.
-<a href="https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm"><img src="../assets/img/mutation.gif" alt="m" width="300" /></a></p>
+<img src="../assets/img/mutation.gif" alt="m" width="300" /></p>
+
+<p><em>Fig4: Mutation[1]</em></p>
 
 <h2 id="function-search--gene-encoding">Function search- Gene Encoding</h2>
 <p>I used a binary genetic algorithm to solve the problem which accepts a binary string(Eg:’111000011010’).To use the algorithm for finding the correct function that optimizes my pattern, I mapped the chromosome length to the number of candidates in the hypothesis. Each combination of the binary string will produce a unique function.</p>
 
 <p><img src="../assets/img/decode.png" alt="g" width="500" /></p>
 
+<p><em>Fig5: Gene Encoding</em></p>
+
 <h2 id="fitness-function">Fitness function</h2>
 <p>I experimented usin different fitness functions. Below is the visualization of the functions I experimented with</p>
 
-<p><a href="https://github.com/epfl-disal/SwarmViz/tree/master/src"><img src="../assets/img/objective.png" alt="onjective" width="800" /></a></p>
+<p>[<img src="../assets/img/objective.png" alt="onjective" width="800" /></p>
+
+<p><em>Fig6: Different Objective functions[2]</em></p>
 
 <p>Criteria: The chromosomes that are more fit have a better chance of survival. Fitness is a function that measures the quality of the solution represented by the chromosome. Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.</p>
 
 <p><img src="../assets/img/fitness.png" alt="fitness" width="600" /></p>
+
+<p><em>Fig7: Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.</em></p>
 
 <h2 id="training">Training</h2>
 
@@ -64,6 +77,8 @@ Over multiple iterations, the chunk of the range that a chromosome takes is prop
 
 <p><img src="../assets/img/gaeval.png" alt="gaval" /></p>
 
+<p><em>Fig8: Training Pipeline</em></p>
+
 <h2 id="limitations-of-genetic-algorithms">Limitations of genetic algorithms</h2>
 <ol>
   <li>They are not effective in solving simple problems.</li>
@@ -74,9 +89,14 @@ Over multiple iterations, the chunk of the range that a chromosome takes is prop
 
 <p><a href="https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning">CODE</a></p>
 
-<!-- Ref: -->
-<!-- [1]: https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html "genetic algorithm" -->
-<!-- http://matheubotha.github.io/DragonBrain/obj_functions/summary.html
-    https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969 -->
+<h2 id="references">References</h2>
+
+<p>1: <a href="https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm">https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html</a></p>
+
+<p>2: <a href="https://github.com/epfl-disal/SwarmViz/tree/master/src">https://github.com/epfl-disal/SwarmViz/tree/master/src</a></p>
+
+<p>3: <a href="https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969">https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969</a></p>
+
+<p>4: <a href="https://cppsecrets.com/article.php?id=8633">https://cppsecrets.com/article.php?id=8633</a></p>
 
 :ET

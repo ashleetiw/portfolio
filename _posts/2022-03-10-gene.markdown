@@ -29,44 +29,52 @@ GA maintains a population of chromosomes. Every chromosome plays the role of pro
 ## Algorithm  
 Given a list of genes and a fitness function, the algorithm starts from a random population and evolves it, generation after generation, until it has converged to a good solution.
 
-[![algo](../assets/img/genetic.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+![algo](../assets/img/genetic.gif){: width="300" }
 
+*Fig1: Evolution flow of genetic algorithm[1]*
 
 ## Reproduction 
 It is a process of finding successors to the current chromosomes. Every reproduction step will produce the chromosomes that are more fit for the problem. 
 Over multiple iterations, the chunk of the range that a chromosome takes is proportional to its fitness. This results in a fitter chromosome getting a bigger chunk
 
-[![repo](../assets/img/reproduction.png){: width="500" }](https://cppsecrets.com/article.php?id=8633)
+![repo](../assets/img/reproduction.png){: width="500" }
 
+*Fig2: Example of Elitism[4]*
 
 ## Crossover
 With the predefined probability "crossoverProbability", we select parents for breeding. The selected parents are shuffled, allowing any combinations to happen. We take pairs of parents and apply the crossover operator. The children replace their parents in the population.
 
-[![c](../assets/img/crossover.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+![c](../assets/img/crossover.gif){: width="300" }
 
+*Fig3: Crossover[1]*
 
 ## Mutation 
 With predefined probability "mutationProbability", we perform recombination on the chromosomes.
-[![m](../assets/img/mutation.gif){: width="300" }](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+![m](../assets/img/mutation.gif){: width="300" }
 
-
+*Fig4: Mutation[1]*
 
 ## Function search- Gene Encoding
 I used a binary genetic algorithm to solve the problem which accepts a binary string(Eg:'111000011010').To use the algorithm for finding the correct function that optimizes my pattern, I mapped the chromosome length to the number of candidates in the hypothesis. Each combination of the binary string will produce a unique function.
 
 ![g](../assets/img/decode.png){: width="500" }
 
+*Fig5: Gene Encoding*
+
 
 
 ## Fitness function 
 I experimented usin different fitness functions. Below is the visualization of the functions I experimented with 
 
-[![onjective](../assets/img/objective.png){: width="800" }](https://github.com/epfl-disal/SwarmViz/tree/master/src)
+[![onjective](../assets/img/objective.png){: width="800" }
+
+*Fig6: Different Objective functions[2]*
 
 Criteria: The chromosomes that are more fit have a better chance of survival. Fitness is a function that measures the quality of the solution represented by the chromosome. Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.
 
 ![fitness](../assets/img/fitness.png){: width="600" }
 
+*Fig7: Fitness function converts a chromosome into an arbitrary double that represents the fitness of the chromosome.*
 
 
 
@@ -82,6 +90,7 @@ It runs for any number of eras. In each era, we:
 
 ![gaval](../assets/img/gaeval.png)
 
+*Fig8: Training Pipeline*
 
 
 ## Limitations of genetic algorithms
@@ -94,10 +103,15 @@ It runs for any number of eras. In each era, we:
 [CODE](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning)
  
 
-<!-- Ref: -->
-<!-- [1]: https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html "genetic algorithm" -->
-<!-- http://matheubotha.github.io/DragonBrain/obj_functions/summary.html
-    https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969 -->
+## References
+
+1: [https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+
+2: [https://github.com/epfl-disal/SwarmViz/tree/master/src](https://github.com/epfl-disal/SwarmViz/tree/master/src)
+
+3: [https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969](https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969)
+
+4: [https://cppsecrets.com/article.php?id=8633](https://cppsecrets.com/article.php?id=8633)
 
 
 
