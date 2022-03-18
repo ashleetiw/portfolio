@@ -1,4 +1,4 @@
-I"–<p>The goal of the project is to enable faster and more precise eye gaze direction estimation in VR/AR/MR devices by exploiting the deflectometry information provided from the reflection of the screen pattern on the specular surface of the eye.</p>
+I"˝<p>The goal of the project is to enable faster and more precise eye gaze direction estimation in VR/AR/MR devices by exploiting the deflectometry information provided from the reflection of the screen pattern on the specular surface of the eye.</p>
 
 <p>This is my final graduate project at Northwestern University. I was supervised by</p>
 <ol>
@@ -90,16 +90,16 @@ the pattern.</p>
   <li>The frequency might not be the exact property that is associated with accuracy.</li>
 </ol>
 
-<p>We test various hypothesis on the properties of patterns that may affect the accuracy, and in the process we aim to find the optimal
+<p>We tested our hypothesis on the properties of patterns that may affect the accuracy, and in the process we aim to find the optimal
 the pattern that yields the lowest error.
 In this process I focused on using algorithms to find the optimal pattern in two steps:</p>
 <ol>
-  <li>To perform a course-level optimization to determine the shape of the function. This was achieved by using the genetic algorithm (which is mentioned in a different post) which eliminated some of the functions from the pool of hypothetical functions formed using a fitness function.</li>
-  <li>To perform a fine-level optimization to fine-tune the constants. This was achieved by gradient descent optimization on L2 loss which was calculated on gazing direction values(azimuthal and elevation angle).</li>
+  <li>To perform a course-level optimization whch helped to determine the shape of the function. This was achieved by using the genetic algorithm (Reference:‚ÄùFunction search/generation using Genetic algorithm‚Äù) which eliminated some of the functions from the pool of hypothetical functions, using a fitness function.</li>
+  <li>To perform a fine-level optimization to fine-tune the constant values. This was achieved by gradient descent optimization on L2 loss which was calculated on gazing direction values(azimuthal and elevation angle).</li>
 </ol>
 
 <h2 id="radial-convolution">Radial convolution</h2>
-<p>Different filters are applied to different pixels based on the radial distance from the center. Convolution was implemented from scratch because all the library based convolution method is based on FFT which applies the kenel to the entire image uniformly.</p>
+<p>Different filters are applied to different pixels based on the radial distance from the center. Convolution was implemented from scratch because nearly all the library based convolution method is based on FFT which applies the kenel to the entire image uniformly.</p>
 
 <p><img src="../assets/img/final.gif" alt="approach" width="600" />
 <img src="../assets/img/my-eye.png" alt="my-eye" width="190" /></p>

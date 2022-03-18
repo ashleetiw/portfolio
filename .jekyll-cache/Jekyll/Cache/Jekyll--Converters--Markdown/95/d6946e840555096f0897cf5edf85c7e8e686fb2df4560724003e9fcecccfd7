@@ -1,15 +1,16 @@
-I"<h2 id="motivation">Motivation</h2>
-<p>As mentioned in my post on “Deep Learning-Based Eye Gaze Estimation using Deflectometry Information in VR/AR/MR Headsets” we utilize learning-based and an inverse rendering-based approaches to more accurately infer the eye gaze direction from the deformation of the reflected pattern on the eye surface.</p>
+I"z<h2 id="motivation">Motivation</h2>
+<p>As mentioned in my post on “Deep Learning-Based Eye Gaze Estimation using Deflectometry Information in VR/AR/MR Headsets” we utilize learning-based and inverse rendering-based approaches to more accurately infer the eye gaze direction from the deformation of the reflected pattern on the eye surface.</p>
 
 <h2 id="pattern-selection">Pattern selection</h2>
-<p>We started with low frequency patterns and used a homogenous white image.We varied the patterns to test whether the
-accuracy increases for the high frequency patterns as opposed to the low frequency patterns. For the high frequency pattern, we use a sinusoidal pattern.
-   To test other forms of patterns I used kernel functions to generate patterns</p>
+<p>We started with low frequency patterns and used a homogenous white image. We varied the patterns to test the hypothesis that whether the 
+accuracy increases for the high frequency patterns as opposed to the low frequency patterns(For the high frequency pattern, we use a sinusoidal pattern).</p>
+
+<p>To improve performance, I generated more varied patterns. One of the method that I used to generate patterns was using kernel functions. The advantage was that I could produce many different patterns simply by changing few parameters.</p>
 
 <h2 id="kernel">Kernel</h2>
-<p>A kernel is essentially a fixed size array of numerical coefficients along with an anchor point in that array, which is typically located at the center.</p>
-
-<p>In order to be a valid kernel function the resulting kernel matrix  should be positive definite . Which implies that the matrix should be symmetric. Being positive definite also means that the kernel matrix is invertible .</p>
+<p>A kernel is essentially a fixed size array of numerical coefficients along with an anchor point in that array, which is typically located at the center.
+In order to be a valid kernel function the resulting kernel matrix should be positive definite which implies that the matrix should be symmetric.
+Being positive definite also means that the kernel matrix is invertible .</p>
 
 <h3 id="exponentiated-quadratic-kernel">Exponentiated quadratic kernel</h3>
 <p><img src="../assets/img/eq1.png" alt="eq1" width="900" /></p>
@@ -34,8 +35,9 @@ accuracy increases for the high frequency patterns as opposed to the low frequen
 
 <p>The periodic kernel allows us to model periodic functions .</p>
 
-<p>The following figure shows samples from the periodic kernel together with a visual representation of its covariance matrix. The amplitude 
-<img src="../assets/img/f3.png" alt="f3" width="300" /></p>
+<p>The following figure shows samples from the periodic kernel together with a visual representation of its covariance matrix.</p>
+
+<p><img src="../assets/img/f3.png" alt="f3" width="300" /></p>
 
 <h3 id="local-periodic-kernel">Local periodic kernel</h3>
 <p>Kernels can be combined by multiplying them together. Multiplying kernels is an elementwise multiplication of their corresponding covariance matrices. This means that the covariances of the two multiplied kernels will only have a high value if both covariances have a high value. The multiply operation can thus be interpreted as an AND operation.</p>
@@ -47,11 +49,13 @@ accuracy increases for the high frequency patterns as opposed to the low frequen
 <p><img src="../assets/img/f4.png" alt="f4" width="300" /></p>
 
 <h2 id="heat-map-and-activation-map-for-analysis">Heat Map and activation Map for analysis</h2>
-<p>To evaluate the patterns, I first reflected all the patterns on the eye model using blender. I used activation map to understand which part of the image(reflected pattern on the eye surface) contributes more in providing the value of gaze direction.This helped us to realized that “effect of aliasing” which hurts the accuracy of the gaze direction.The activation map test was performed on all the pattern with each pattern being trained on dataset with 10800 images.The experiment showed that to improve the gazing direction we need to consider the undersampling situation happening at the boundary of the cornea and sclera because of the abrupt change in curvature.</p>
+<p>To evaluate the patterns, I first reflected all the patterns on the eye model using blender. I used activation map to understand which part of the image(reflected pattern on the eye surface) contributes more in providing the resulting value of gaze direction.(caclulation of gaze directions is mentioned in “Deep Learning-Based Eye Gaze Estimation using Deflectometry Information in VR/AR/MR Headsets” post).</p>
 
 <p><img src="../assets/img/activ1.png" alt="a1" width="200" />
 <img src="../assets/img/act3.png" alt="a2" width="300" />
 <img src="../assets/img/act2.png" alt="a3" width="350" /></p>
+
+<p>The activation map test was performed on all the pattern with each pattern being trained on dataset with 10800 images. The experiment showed that in order to improve the gazing direction we need to consider the undersampling situation happening at the boundary of the cornea and sclera because of the abrupt change in curvature.This helped us to draw conclusion that “effect of aliasing” hurts the accuracy of the gaze direction.</p>
 
 <p><a href="https://github.com/ashleetiw/pattern-generation">CODE</a></p>
 
